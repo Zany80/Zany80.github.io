@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			if (typeof(main_page) !== "boolean" || !main_page) {
+				document.cookie = "page=/main.html";
+				window.location.href = "/";
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<span class="title">
+			<img src="/zany.png"/>
+			Zany80
+			</span>
+			<span class="subtitle">The fantasy console built around the Z80</span>
+			<span class="subtitle">&copy; Noam Preil 2017 - 2019.</span>
+		</header>
+		<br>
+		<header>
+			<nav class="navbar">
+			  <div class="flexor"></div>
+			  <div class="button"><a href="javascript:load('/main.html', 'content')">Main page</a></div>
+			  <div class="button"><a href="https://discord.gg/BYbjDEP">Discord</a></div>
+			  <div class="button"><a href="https://github.com/Zany80/Zany80/issues">Bug reports</a></div>
+			  <div class="button"><a href="javascript:load('/downloads.html','content')">Downloads</a></div>
+			  <div class="button"><a href="javascript:load('/documentation/index.html', 'content')">Documentation</a></div>
+			  <div class="flexor"></div>
+			</nav>
+		</header>
+	</body>
+</html>

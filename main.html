@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zany80</title>
+		<script>
+			if (typeof(main_page) === 'undefined' || !main_page) {
+				document.cookie = "page=/main.html;path=/";
+				window.location.href = "/";
+			}
+		</script>
+	</head>
+	<body>
+		<p>Zany80 is a fantasy console designed around the 
+		<a href="https://en.wikipedia.org/wiki/Zilog_Z80">Z80 processor</a>. Zany80
+		programming is done in standard C, or directly in Z80 assembly. Check out the
+		<a href="javascript:load('/documentation/programming/','content')">programming section</a>
+		for more details.</p>
+		
+		<p>It's possible other CPUs such as the 6809 or AVR chips will be supported
+		at some point as well.</p>
+
+		<p>Zany80 has been open-source under the Apache 2.0 license since September 19th, 2017. The
+		source is publicly accessible
+		<a href="https://github.com/Zany80/Zany80">here</a>. Forks, pull requests, and
+		bug reports are all welcome, and any and all assistance is hugely appreciated.
+		</p>
+
+		<p>Zany80 was originally called Zenith80, but the name was charged after
+		the discovery that a company called Zenith Data Systems existed that
+		worked with the Z80 processor so as to avoid confusion (and, admittedly, 
+		while Zenith is a fun word, Zany80 just has a better ring to it).
+		</p>
+	</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Downloads</title>
+		<script>
+			if (typeof(main_page) !== "boolean" || !main_page) {
+				document.cookie = "page=downloads.html";
+				window.location.href = "/";
+			}
+		</script>
+		<style>
+			code {
+				background-color: #333;
+				border: 1px solid #999;
+				font-size: 1em;
+				padding:2px;
+			}
+			table,tr,td ,th{
+				border: 1px solid black;
+				font-size: 1em;
+				text-align: center;
+			}
+			li {
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Downloads</h2>
+		<p>In case the versioning is confusing, here's a simple explanation.</p>
+		<p>The first three numbers are the major, minor, and patch version, 
+		respectively. The fourth number, the "tweak", is incremented for every 
+		single code change. Real releases are those for which the fourth number 
+		is a 0. Anything with a non-zero tweak is a prerelease, which means 
+		increased functionality but with a significantly higher risk of 
+		encountering bugs. The latest prerelease is sometimes added here for 
+		convenience, but only the latest. This means, for instance, that when 
+		0.0.5.6 is made available, 0.0.5.5 is taken down. All non-prereleases 
+		will however be available indefinitely, so 0.0.5.0 won't be taken down 
+		when 0.0.6 is released.</p>
+		<p>If only three numbers are shown (e.g. 0.0.5), they are major minor and patch, and it is not a prerelease.</p>
+		<!-- TODO: automate this somehow -->
+		<table>
+			<tbody>
+				<tr>
+					<th>Version</th>
+					<th width="60%">Changelog</th>
+					<th>Links</th>
+				</tr>
+				<tr>
+					<td>0.0.3.5 (prerelease)</td>
+					<td>
+						<ul>
+							<li>Internal cleanup</li>
+							<li>Loads editor and display on startup</li>
+								<ul>
+									<li>The dependency system added in 0.0.3 causes the CPU and
+									assembler to be loaded automatically as well</li>
+								</ul>
+							<li>Further error handling refinement</li>
+						</ul>
+					</td>
+					<td>
+						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.5-51c9a92/Zany80-0.0.3.5-Linux.deb">
+							Debian package</a><br>
+						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.5-51c9a92/Zany80-0.0.3.5-Linux.tar.gz">
+							Tarball</a>
+					</td>
+				</tr>
+				<tr>
+					<td>0.0.3.0</td>
+					<td>
+						<ul>
+							<li>Adds internal plugin dependency system</li>
+							<li>Adds plugin named function support</li>
+							<li>Switch I/O handlers to use <code>std::function</code>s instead of lambdas to simplify I/O binding</li>
+							<li>Remove old unusable plugins</li>
+							<li>Remove display from CPU plugin, create separate display plugin</li>
+							<li>Rename scas' plugin from to assembler (from official_assembler)</li>
+							<li>Add Editor dependency on Toolchain plugin</li>
+							<li>Improve error handling</li>
+							<li>Improve plugin hub</li>
+						</ul>
+					</td>
+					<td>
+						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.0-61cffae/Zany80-0.0.3.0-Linux.deb">
+							Debian package</a><br>
+						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.0-61cffae/Zany80-0.0.3.0-Linux.tar.gz">
+							Tarball</a>
+					</td>
+				</tr>
+				<tr>
+					<td>0.0.2.4</td>
+					<td>
+						<ul>
+							<li>A bug fix for the installer generation - packages now include the libc which is required for building programs</li>
+							<li>Editor now has proper highlighting</li>
+							<li>Editor now gives details on some functions and instructions when you hover over them</li>
+							<li>Various minor bug fixes and tweaks</li>
+						</ul>
+						Web version: <ul>
+							<li>Downloading a file now uses Windows line endings (\r\n instead of \n)</li>
+							<li>Can now load local files via the input box on the bottom of the screen</li>
+						</ul>
+					</td>
+					<td>
+						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.2.4-d27f821/Zany80-0.0.2.4-Linux.deb">
+							Debian package</a><br>
+						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.2.4-d27f821/Zany80-0.0.2.4-Linux.tar.gz">
+							Tarball</a><br>
+					</td>
+				</tr>
+				<tr>
+					<td>0.0.2.0</td>
+					<td>
+						<ul>
+							<li>Embedded development tools, including an editor with syntax highlighting & intuitive error marking</li>
+							<li>Live testing (a game can be run from the editor via Build -> Execute)</li>
+						</ul>
+						Web version:
+						<ul>
+							<li>Now fully functional (editor, CPU, shell, etc. 
+							all work) with very few remaining bugs which should
+							be cleaned up soon</li>
+							<li>Can downloads files from the editor</li>
+						</ul>
+					</td>
+					<td>
+						Unfortunately, this (and all older builds) is no longer
+						available as the older builds (and commits in git) were
+						wiped when merging the new repository into the original.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

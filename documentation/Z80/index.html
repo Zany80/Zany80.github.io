@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Z80 Documentation</title>
+		<script>
+			if (typeof(main_page) !== "boolean" || !main_page) {
+				document.cookie = "page=/documentation/Z80/index.html;path=/";
+				window.location.href = "/";
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+			<a onclick="load('/documentation/Z80/UserManual-embed.html', 'content');history.pushState({'content':document.getElementById('content'), title: 'User Manual'}, '', '/documentation/Z80/UserManual.html');" href="javascript:">Z80 User's Manual (online)</a><br>	
+			<a href="/documentation/Z80/UserManual.pdf" download>Z80 User's Manual (PDF)</a> (note: this is a download)<br>
+		</p>
+	</body>
+</html>

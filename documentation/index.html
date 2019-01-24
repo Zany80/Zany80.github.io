@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Documentation</title>
+		<script>
+			if (typeof(main_page) === 'undefined' || !main_page) {
+				document.cookie = "page=documentation/index.html;path=/";
+				window.location.href = "/";
+			}
+		</script>
+	</head>
+	<body>
+		<p>
+			<a href="javascript:load('/documentation/Z80/', 'content')">Documentation related to the Z80 CPU</a>
+			<br>
+			<a href="javascript:load('/documentation/build/','content')">Build instructions</a>
+			<br>
+			<a href="javascript:load('/documentation/programming/','content')">Programming</a>
+			<br>
+		</p>
+	</body>
+</html>

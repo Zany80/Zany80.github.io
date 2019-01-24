@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title>Linux build instructions</title>
+		<script>
+			document.cookie = "page_build_instructions=/documentation/build/linux.html;path=/";
+			document.cookie = "page_content=/documentation/build/;path=/";
+			window.href = '/';
+		</script>
+		<style>
+			code {
+				background-color: #333;
+				border: 1px solid #999;
+				font-size: 1em;
+				padding:2px;
+			}
+			.shell_prompt {
+				color: white;
+			}
+			.g {
+				color: #55ff55;
+			}
+			.b {
+				color: #5555ff;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Building for Linux</h2>
+		<p><b>Warning: there are some things this guide assumes you know. If you
+		encounter any trouble, please ask for help on the #zany80 channel on the
+		<a href="https://discord.gg/BYbjDEP">Fantasy Consoles Discord server</a>
+		(or, if you have IRC, the #zany80 channel on Freenode's network).</b></p>
+		<br>
+		<br>
+		<p>Building Zany80 for Linux is extremely simple. The first thing to do is,
+		of course, to download the source code. There are multiple places you
+		can do this, but the easiest way by far is to use a tool called <code>git</code>.</p>
+		<p>First, install <code>git</code> using your distro's package manager.
+		On Debian-based systems (including Ubuntu) for instance, run
+		<code>sudo apt install git</code>, and on Gentoo, run
+		<code>sudo emerge -av dev-vcs/git</code>.</p>
+		<p>Once <code>git</code> is installed, open a terminal in the folder you
+		want to use to build Zany80, and clone the source code.</p>
+		<p>These examples use /home/user/Builds/Zany80 for the build folder, but
+		it doesn't matter where you do it.</p>
+		<code class="shell_prompt">
+			<span class=g>user@hostname</span>:<span class=b>~/Builds</span>$ git clone https://github.com/Zany80/Zany80<br>
+			Cloning into 'Zany80'...<br>
+			remote: Enumerating objects: 167, done.<br>
+			remote: Counting objects: 100% (167/167), done.<br>
+			remote: Compressing objects: 100% (105/105), done.<br>
+			remote: Total 2194 (delta 74), reused 142 (delta 52), pack-reused 2027<br>
+			Receiving objects: 100% (2194/2194), 12.98 MiB | 3.22 MiB/s, done.<br>
+			Resolving deltas: 100% (1239/1239), done.<br>
+			<span class=g>user@hostname</span>:<span class=b>~/Builds</span>$ cd Zany80<br>
+			<span class=g>user@hostname</span>:<span class=b>~/Builds/Zany80</span>$ 
+		</code>
+		<p>Once you have the source code, the rest is extremely simple. The
+build is handled by the build tool "fips", which is very lightweight and part of
+the repository already.</p>
+		<p>First, a configuration needs to be set. This can be done with</p>
+		<code class="shell_prompt">./fips set config linux-ENVIRONMENT-TYPE</code>
+		<p>For example, to create a release build using GNU Make, use the following:</p>
+		<code class="shell_prompt">
+			<span class=g>user@hostname</span>:<span class=b>~/Builds/Zany80</span>$ 
+			./fips set config linux-make-release<br>
+			'config' set to 'linux-make-release' in project 'Zany80'
+		</code>
+		<p>For a debug build, replace <code>release</code> with <code>debug</code>
+		in the configuration name. For a full list of configurations, execute</p>
+		<code class="shell_prompt">
+			<span class=g>user@hostname</span>:<span class=b>~/Builds/Zany80</span>$ ./fips list configs
+		</code>
+		<p>There are a <i>lot</i> of configuration options, so you may want to
+		pipe the output to <code>less</code> to make it more readable. It might
+		also be useful to pipe the output to <code>grep linux</code> to hide the
+		non-linux configurations.</p>
+		<p>Once you have a configuration set, it's time to generate the build
+		files.</p>
+		<code class="shell_prompt">
+			<span class=g>user@hostname</span>:<span class=b>~/Builds/Zany80</span>$ ./fips gen
+		</code>
+		<p>As this is the first build, it will first download some needed files.</p>
+		<p>In the end, you should see something like this:</p>
+		<code class="shell_prompt">-- Configuring done<br>
+			-- Generating done<br>
+			-- Build files have been written to: /home/user/Builds/Zany80/build/fips-build/Zany80/linux-make-release<br>
+			1 configs generated
+		</code>
+		<p>If you're using an IDE (for instance, the linux-eclipse-release config),
+		you should now be able to import the project, though further configuration 
+		may be required. For Eclipse, I suggest modifying the build configuration
+		of the Zany80-Release project to invoke 
+		<code>bash -c "./fips build linux-eclipse-release"</code> instead of the
+		default gmake. This is necessary so that Zany80's custom build command
+		can move the plugins into a location that Zany80 can access them.</p>
+		<p>Building can be done via <code>./fips build</code>, and you can run
+		Zany80 via <code>./fips run zany80</code>.</p>
+		<p>If you want to build a .tar.gz and a .deb package, you can run 
+		<code>./fips make package</code>, and you should see (after some noise
+		about the dependencies) something like this:</p>
+		<code class="shell_prompt">
+			[100%] Built target zany80<br>
+			Run CPack packaging tool...<br>
+			CPack: Create package using TGZ<br>
+			CPack: Install projects<br>
+			CPack: - Run preinstall target for: Zany80<br>
+			CPack: - Install project: Zany80<br>
+			CPack: Create package<br>
+			CPack: - package: /home/user/Builds/Zany80/build/fips-build/Zany80/linux-make-release/Zany80-0.0.3.5-Linux.tar.gz generated.<br>
+			CPack: Create package using DEB<br>
+			CPack: Install projects<br>
+			CPack: - Run preinstall target for: Zany80<br>
+			CPack: - Install project: Zany80<br>
+			CPack: Create package<br>
+			CPack: - package: /home/user/Builds/Zany80/build/fips-build/Zany80/linux-make-release/Zany80-0.0.3.5-Linux.deb generated.<br>
+			1 configs built
+		</code>
+		<p>Note that these packages, unlike the official ones, are only good for
+		systems that are similar to your own. <b>This is not a limitation I imposed</b>,
+		but a technical one. The official builds are deliberately built by an old
+		system, which limits the dependencies and makes it possible to run them
+		on just about any modern system. The official builds are compiled with GCC
+		4.8. If you build with GCC 7, however, your build will depend on a lot of
+		cutting edge features which most setups don't have.</p>
+		<p>If you want to create a package usable on most systems, either set up
+		a chroot of an older system, or look into a solution like Docker.
+		Alternatively, if you fork Zany80 on Github, you can modify the .travis.yml
+		file and set up the free Travis CI system to create a portable build for
+		you.</p>
+		<p>As a final, somewhat tangential note: if you create a folder 
+		<code>build/fips-deploy/emsc-make-release/</code> and run 
+		<code>./fips run index emsc-make-release</code>, the contents of that
+		folder will be served on an HTTP server on port 8000 (accessible at
+		<code>localhost:8000</code>).</p>
+	</body>
+</html>
+<!--  Shell prompt:
+			<span class=g>user@hostname</span>:<span class=b>~/Builds/Zany80</span>$ 
+ -->
