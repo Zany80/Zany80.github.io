@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	load("/header.html", "header", true);
 	var change = false;
 	// Map the cookies
-	//~ var cookies = {};
+	var cookies = {};
 	var c = document.cookie.split("; ");
 	for (var s in document.cookie.split("; ")) {
 		cookies[c[s].split("=")[0]] = c[s].split("=")[1];
