@@ -5,7 +5,7 @@
 		<script>
 			if (typeof(main_page) !== "boolean" || !main_page) {
 				document.cookie = "page=downloads.html";
-				window.location.href = "/";
+				//~ window.location.href = "/";
 			}
 		</script>
 		<style>
@@ -26,125 +26,148 @@
 		</style>
 	</head>
 	<body>
-		<h2>Downloads</h2>
-		<p>In case the versioning is confusing, here's a simple explanation.</p>
-		<p>The first three numbers are the major, minor, and patch version, 
-		respectively. The fourth number, the "tweak", is incremented for every 
-		single code change. Real releases are those for which the fourth number 
-		is a 0. Anything with a non-zero tweak is a prerelease, which means 
-		increased functionality but with a significantly higher risk of 
-		encountering bugs. The latest prerelease is sometimes added here for 
-		convenience, but only the latest. This means, for instance, that when 
-		0.0.5.6 is made available, 0.0.5.5 is taken down. All non-prereleases 
-		will however be available indefinitely, so 0.0.5.0 won't be taken down 
-		when 0.0.6 is released.</p>
-		<p>If only three numbers are shown (e.g. 0.0.5), they are major minor and patch, and it is not a prerelease.</p>
-		<!-- TODO: automate this somehow -->
-		<table>
-			<tbody>
-				<tr>
-					<th>Version</th>
-					<th width="60%">Changelog</th>
-					<th>Links</th>
-				</tr>
-                <tr>
-                    <td>0.1.0 Release Candidate 1</td>
-                    <td>
-                        Major overhaul, links posted quickly, but I don't have time to create a changelog now
-                    </td>
-                    <td>
-                        <a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc1/Zany80.0.1.0.Release.Candidate.1.deb">Debian package</a><br>
-                        <a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc1/Zany80.0.1.0.Release.Candidate.1.tar.gz">Tarball</a><br>
-                    </td>
-                </tr>
-				<tr>
-					<td>0.0.3.5 (prerelease)</td>
-					<td>
-						<ul>
-							<li>Internal cleanup</li>
-							<li>Loads editor and display on startup</li>
-								<ul>
-									<li>The dependency system added in 0.0.3 causes the CPU and
-									assembler to be loaded automatically as well</li>
-								</ul>
-							<li>Further error handling refinement</li>
-						</ul>
-					</td>
-					<td>
-                        Due to bugs, 0.0.3.5 has been taken down.
-<!--
-						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.5-51c9a92/Zany80-0.0.3.5-Linux.deb">
-							Debian package</a><br>
-						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.5-51c9a92/Zany80-0.0.3.5-Linux.tar.gz">
-							Tarball</a>
--->
-					</td>
-				</tr>
-				<tr>
-					<td>0.0.3.0</td>
-					<td>
-						<ul>
-							<li>Adds internal plugin dependency system</li>
-							<li>Adds plugin named function support</li>
-							<li>Switch I/O handlers to use <code>std::function</code>s instead of lambdas to simplify I/O binding</li>
-							<li>Remove old unusable plugins</li>
-							<li>Remove display from CPU plugin, create separate display plugin</li>
-							<li>Rename scas' plugin from to assembler (from official_assembler)</li>
-							<li>Add Editor dependency on Toolchain plugin</li>
-							<li>Improve error handling</li>
-							<li>Improve plugin hub</li>
-						</ul>
-					</td>
-					<td>
-						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.0-61cffae/Zany80-0.0.3.0-Linux.deb">
-							Debian package</a><br>
-						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.3.0-61cffae/Zany80-0.0.3.0-Linux.tar.gz">
-							Tarball</a>
-					</td>
-				</tr>
-				<tr>
-					<td>0.0.2.4</td>
-					<td>
-						<ul>
-							<li>A bug fix for the installer generation - packages now include the libc which is required for building programs</li>
-							<li>Editor now has proper highlighting</li>
-							<li>Editor now gives details on some functions and instructions when you hover over them</li>
-							<li>Various minor bug fixes and tweaks</li>
-						</ul>
-						Web version: <ul>
-							<li>Downloading a file now uses Windows line endings (\r\n instead of \n)</li>
-							<li>Can now load local files via the input box on the bottom of the screen</li>
-						</ul>
-					</td>
-					<td>
-						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.2.4-d27f821/Zany80-0.0.2.4-Linux.deb">
-							Debian package</a><br>
-						<a download href="https://github.com/Zany80/Zany80/releases/download/0.0.2.4-d27f821/Zany80-0.0.2.4-Linux.tar.gz">
-							Tarball</a><br>
-					</td>
-				</tr>
-				<tr>
-					<td>0.0.2.0</td>
-					<td>
-						<ul>
-							<li>Embedded development tools, including an editor with syntax highlighting & intuitive error marking</li>
-							<li>Live testing (a game can be run from the editor via Build -> Execute)</li>
-						</ul>
-						Web version:
-						<ul>
-							<li>Now fully functional (editor, CPU, shell, etc. 
-							all work) with very few remaining bugs which should
-							be cleaned up soon</li>
-							<li>Can downloads files from the editor</li>
-						</ul>
-					</td>
-					<td>
-						Unfortunately, this (and all older builds) is no longer
-						available as the older builds (and commits in git) were
-						wiped when merging the new repository into the original.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
+		
+<h2>Downloads</h2>
+
+<p>In case the versioning is confusing, here's a simple explanation. The first
+three numbers are the major, minor, and patch version, respectively. The fourth
+number, the "tweak", is incremented for every single code change. Real releases
+are those for which the fourth number is a 0. Anything with a non-zero tweak is
+a prerelease, which means increased functionality but with a significantly
+higher risk of encountering bugs. The latest prerelease is sometimes added here
+for convenience, but only the latest. This means, for instance, that when 
+0.0.5.6 is made available, 0.0.5.5 is taken down. All non-prereleases will
+however be available indefinitely, so 0.0.5.0 won't be taken down when 0.0.6 is
+released.</p>
+
+<p>If only three numbers are shown (e.g. 0.0.5), they are major minor and patch,
+and it is not a prerelease.</p>
+
+<p>Practically speaking, the goal is to increment the major release version once a
+year.</p>
+
+<p>RC stands for Release Candidate. Before any minor or major release, a RC is put
+out to help find any bugs before the official release. RCs can be viewed as a
+form of prerelease which is less likely to be bugged and more official. Whereas
+prereleases are released at my discretion based on my local work, release
+candidates are released before every minor or major version increase.</p>
+
+<h3>0.1.0 RC 2</h3>
+
+<ul>
+<li>Graphical API added for plugins usage
+<ul>
+<li>Windows</li>
+<li>Radio buttons</li>
+<li>Normal buttons</li>
+<li>Menus</li>
+<li>Menu items</li>
+<li>Submenus</li>
+<li>Labels</li>
+<li>Checkboxes</li>
+<li>Horizontal and vertical widget groups</li>
+<li>Extremely simple API</li>
+<li>Supports adding widgets and menus to the root window</li>
+</ul></li>
+<li>Example plugin added to demonstrate new architecture's simplicity</li>
+<li><strong>WINDOWS SUPPORT ADDED!</strong> Which, as a result, meant more widespread code base changes.</li>
+<li>C++ has been eradicated from most plugins, which are now in "pure" C</li>
+<li>The editor has seen many improvements:
+<ul>
+<li>Can now build files before they have been saved</li>
+<li>The CPU to send the ROM to can now be selected from a menu</li>
+<li>The assembler to use to build the code can now be selected from a menu</li>
+<li>The UI has been cleaned up:
+<ul>
+<li>The open/save dialog no longer replaces the editor, instead integrating within it smoothly</li>
+<li>The message window at the bottom is now resizable independent of the main editor window</li>
+<li>The message window is now its own separate, linked window instead of a child window, making it much more readable</li>
+</ul></li>
+</ul></li>
+<li>The assembler's log can be shown even upon successful assembly through a menu option</li>
+<li>Revert usage of std::functions in I/O handlers</li>
+<li>API is now fully usable from C, no C++ required</li>
+<li>Shell plugin removed</li>
+<li>Dummy assembler added</li>
+<li>Editor no longer defaults to using the standard library</li>
+<li>Debug port added (port 2, output only, output is dumped to stdio)</li>
+<li>Plugin API reworked to use C</li>
+<li>Now uses <a href="https://github.com/knightos/scas">scas</a>'s <code>list_t</code> type internally
+for dynamic arrays in C</li>
+<li>Replace "libc" with pure assembly standard library</li>
+</ul>
+
+<h4>Linux</h4>
+
+<h5>Wayland</h5>
+
+<ul>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-Wayland.deb">Debian Package</a></li>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-Wayland.tar.gz">Tarball</a></li>
+</ul>
+
+<h5>X11</h5>
+
+<ul>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-OpenGL.deb">Debian Package</a></li>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-OpenGL.tar.gz">Tarball</a></li>
+</ul>
+
+<h4>Windows</h4>
+
+<ul>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2.exe">64-bit Installer</a></li>
+</ul>
+
+<h3>0.1.0 RC 1</h3>
+
+<h4>Linux</h4>
+
+<ul>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc1/Zany80.0.1.0.Release.Candidate.1.deb">Debian Package</a></li>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc1/Zany80.0.1.0.Release.Candidate.1.tar.gz">Tarball</a></li>
+</ul>
+
+<h3>0.0.3</h3>
+
+<ul>
+<li>Adds internal plugin dependency system</li>
+<li>Adds plugin named function support</li>
+<li>Switch I/O handlers to use <code>std::function</code>s instead of lambdas to simplify I/O binding</li>
+<li>Remove old unusable plugins</li>
+<li>Remove display from CPU plugin, create separate display plugin</li>
+<li>Rename scas' plugin from to assembler (from official_assembler)</li>
+<li>Add Editor dependency on Toolchain plugin</li>
+<li>Improve error handling</li>
+<li>Improve plugin hub</li>
+<li>A bug fix for the installer generation - packages now include the libc which is required for building programs</li>
+<li>Editor now has proper highlighting</li>
+<li>Editor now gives details on some functions and instructions when you hover over them</li>
+<li>Various minor bug fixes and tweaks</li>
+<li>Web version:
+<ul>
+<li>Downloading a file now uses Windows line endings (\r\n instead of \n)</li>
+<li>Can now load local files via the input box on the bottom of the screen</li>
+</ul></li>
+</ul>
+
+<h4>Linux</h4>
+
+<ul>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/0.0.3.0-61cffae/Zany80-0.0.3.0-Linux.deb">Debian Package</a></li>
+<li><a href="https://github.com/Zany80/Zany80/releases/download/0.0.3.0-61cffae/Zany80-0.0.3.0-Linux.tar.gz">Tarball</a></li>
+</ul>
+
+<h3>0.2.0</h3>
+
+<ul>
+<li>Embedded development tools, including an editor with syntax highlighting &amp; intuitive error marking</li>
+<li>Live testing (a game can be run from the editor via Build -> Execute)</li>
+<li>Web version:
+<ul>
+<li>Now fully functional (editor, CPU, shell, etc. all work) with most bugs fixed</li>
+<li>Can download files from the editor</li>
+</ul></li>
+</ul>
+</body>
 </html>
