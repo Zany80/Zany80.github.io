@@ -62,15 +62,38 @@ for dynamic arrays in C
 
 #### Linux
 
-##### Wayland
+##### Musl libc-based distros
 
-* [Debian Package](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-Wayland.deb)
-* [Tarball](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-Wayland.tar.gz)
+These builds are for use on e.g. Alpine Linux.
 
-##### X11
+**If you don't know what the musl libc is, you don't have it.** Use a
+[glibc build](#glibc) instead.
 
-* [Debian Package](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-OpenGL.deb)
-* [Tarball](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-OpenGL.tar.gz)
+###### Wayland
+
+* [Debian Package](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-musl-Wayland.deb)
+* [Tarball](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-musl-Wayland.tar.gz)
+
+###### X11
+
+* [Debian Package](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-musl-OpenGL.deb)
+* [Tarball](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-musl-OpenGL.tar.gz)
+
+##### Glibc-based distros
+
+<div id="glibc"/>
+
+These builds are for use on typical Linux distros such as Debian and Ubuntu.
+
+###### Wayland
+
+* [Debian Package](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-glibc-Wayland.deb)
+* [Tarball](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-glibc-Wayland.tar.gz)
+
+###### X11
+
+* [Debian Package](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-glibc-OpenGL.deb)
+* [Tarball](https://github.com/Zany80/Zany80/releases/download/v0.1.0-rc2/Zany80-0.1.0.0-RC2-glibc-OpenGL.tar.gz)
 
 #### Windows
 
